@@ -1,6 +1,6 @@
 body{
 	margin:0 auto;
-	font-family: 'Teko', sans-serif;
+font-family: 'Merienda', cursive;
 	background: #2900CC;
 			display:flex;
 	flex-direction: column;
@@ -61,7 +61,6 @@ svg.cat-svg {
     min-width: 60px;
     max-width: 200px;
     min-height: 40px;
-    top: 50px;
     position: relative;
     left: 100px;
     align-items: center;
@@ -141,6 +140,10 @@ flex-direction: column;
     border-radius: 50%;
 }
 
+.chevron:hover{
+	 background: #ef91ff;
+}
+
 /*-------radio styling--------------*/
 
 input[type="radio"] {
@@ -170,7 +173,32 @@ input[type="radio"] {
 
 }
 
+/*------------ loading ellipses --------*/
 
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+  animation: ellipsis steps(4,end) 900ms infinite;
+  content: "\2026"; 
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;    
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;    
+  }
+}
+
+/*----------- submit button -------*/
 
 button{
 padding:1em 1.5em;

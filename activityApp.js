@@ -14,16 +14,16 @@ const speechBubble = document.getElementById('speech-bubble');
 let rightEye = 	document.getElementById('right_eye_ball');
 let leftEye = 	document.getElementById('left_eye_ball');
 			
-			window.addEventListener('mousemove', (event) => {
+window.addEventListener('mousemove', (event) => {
+
+	const xlocation = -(window.innerWidth / 2 - event.pageX) / 45;
+	const ylocation = -(window.innerWidth / 2 - event.pageY) / 45;
+
+rightEye.style.transform = `translateY(${ylocation}px) translateX(${xlocation}px)`;
+leftEye.style.transform = `translateY(${ylocation}px) translateX(${xlocation}px)`;
+
 				
-				const xlocation = -(window.innerWidth / 2 - event.pageX) / 45;
-				const ylocation = -(window.innerWidth / 2 - event.pageY) / 45;
-				
-		rightEye.style.transform = `translateY(${ylocation}px) translateX(${xlocation}px)`;
-          leftEye.style.transform = `translateY(${ylocation}px) translateX(${xlocation}px)`;
-					
-				
-			});
+});
 
 
 //----------SET NUMBER OF PEOPLE -----
@@ -87,12 +87,11 @@ filterPrice.addEventListener("change", event => {
   // ---------  End of filterActivity() -------------------
 
 async function getAndShowActivity() {
+	displayLoading()
 	const url = urlBase + optionsParticipants + optionsPrice;
-
 	const activityPromise = await fetch(url);
 const activities = await activityPromise.json();
 	
-	console.log(url)
 
 	if(activities.activity !== undefined) {
 		speechBubble.textContent = `I know! ${activities.activity}?`
@@ -102,7 +101,9 @@ const activities = await activityPromise.json();
 
 }
 
-
+function displayLoading(){
+speechBubble.innerHTML = `<p class = "loading">Let me think</p>`
+}
 
 
 submitBtn.addEventListener('click', getAndShowActivity)
