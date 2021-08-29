@@ -1,0 +1,182 @@
+body{
+	margin:0 auto;
+	font-family: 'Teko', sans-serif;
+	background: #2900CC;
+			display:flex;
+	flex-direction: column;
+	align-items: center;
+	color:white;
+	
+}
+
+header{
+	width:100%;
+}
+
+.logo{
+	position: absolute;
+    right: 0px;
+    padding: 1.5em 2em;
+	font-weight:500;
+	font-size:1.2em;
+	letter-spacing:0.2em;
+}
+
+/*	-------------MAIN CONTENT---------*/
+.site-wrapper{
+    max-width: 700px;
+    position: relative;
+    width: 100%;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.cat-container{
+	margin-top:3em;
+}
+
+.site-tag{
+	color:#00FF67;
+	font-size:3em;
+	margin:0.5em;
+	padding:0em;
+	position:absolute;
+	font-weight:800;
+	left:-15px;
+	    top: 35px;
+}
+svg.cat-svg {
+	max-height: 400px;
+    width: 100%;
+  
+}
+
+#speech-bubble {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    min-width: 60px;
+    max-width: 200px;
+    min-height: 40px;
+    top: 50px;
+    position: relative;
+    left: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+#speech-bubble:before,
+#speech-bubble:after {
+  content:"";
+  background-color:#fff;
+  border-radius:50%;
+  display:block;
+  position:absolute;
+  z-index:-1;
+}
+.#speech-bubble:before {
+  width:44px;
+  height:44px;
+  top:-12px;
+  left:28px;
+  box-shadow:-50px 30px 0 -12px #fff;
+}
+#speech-bubble:after {
+  bottom:-10px;
+  right:26px;
+  width:30px;
+  height:30px;
+  box-shadow:40px -34px 0 0 #fff,
+             -28px -6px 0 -2px #fff,
+             -24px 17px 0 -6px #fff,
+             -5px 25px 0 -10px #fff;
+  
+}
+
+/*---------------- FORM -------------*/
+form {
+	 align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+	cursor:pointer;
+}
+
+#people-counter{
+	font-size:2em;
+	margin:0em 1.2em;
+}
+.question-box-wrapper{
+	background:#8662E2;
+	border:10px;
+	padding:1em;
+	margin: 1em;
+	min-width:300px;
+	max-width:500px;
+	 display: flex;
+flex-direction: column;
+    align-items: center;
+		border-radius:10px;
+}
+.user-input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chevron{
+    background: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/*-------radio styling--------------*/
+
+input[type="radio"] {
+   position: absolute;
+   opacity: 0;
+}
+
+
+
+.priceBox{
+	    padding: 1em 1.5em;
+    margin: 0.2em;
+	cursor:pointer;
+	background:white;
+	border-radius:5px;
+	color:black;
+	    max-height: 20px;
+	border:none;
+}
+.priceBox:hover, 
+.priceBox:active,
+.priceBox:checked + .priceBox,
+.priceBox:focus + .priceBox 
+{
+    background: #ef91ff;
+
+
+}
+
+
+
+button{
+padding:1em 1.5em;
+background:#f5161a;
+	border:none;
+	color:white;
+	border-radius:5px;
+	margin-top:1em;
+}
