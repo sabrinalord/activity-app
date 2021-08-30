@@ -53,6 +53,14 @@ svg.cat-svg {
   
 }
 
+#eyebrows{
+  transition: transform 500ms ease-in-out 25ms;
+}
+
+.raised {
+  transform: translateY(-30px);
+}
+
 #speech-bubble {
     display: flex;
     background-color: #fff;

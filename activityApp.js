@@ -7,26 +7,12 @@ let optionsParticipants = "";
 let optionsPrice = "";
 const submitBtn = document.getElementById('submit-btn');
 const speechBubble = document.getElementById('speech-bubble');
+const eyebrows = document.getElementById('eyebrows');
 
-//---------- MOVE EYES -----
-
-
-let rightEye = 	document.getElementById('right_eye_ball');
-let leftEye = 	document.getElementById('left_eye_ball');
-			
-window.addEventListener('mousemove', (event) => {
-
-	const xlocation = -(window.innerWidth / 2 - event.pageX) / 45;
-	const ylocation = -(window.innerWidth / 2 - event.pageY) / 45;
-
-rightEye.style.transform = `translateY(${ylocation}px) translateX(${xlocation}px)`;
-leftEye.style.transform = `translateY(${ylocation}px) translateX(${xlocation}px)`;
-
-				
-});
 
 
 //----------SET NUMBER OF PEOPLE -----
+
 
 
 let peopleOptions = ['1', '2', '3', '4+']
@@ -91,14 +77,20 @@ async function getAndShowActivity() {
 	const url = urlBase + optionsParticipants + optionsPrice;
 	const activityPromise = await fetch(url);
 const activities = await activityPromise.json();
+	const delay = ms => new Promise(res => setTimeout(res, ms));
+
 	
 
 	if(activities.activity !== undefined) {
-		speechBubble.textContent = `I know! ${activities.activity}?`
+		eyebrows.classList.add('raised')
+		speechBubble.textContent = `I know! ${activities.activity}`
+		  await delay(2000);
+				eyebrows.classList.remove('raised')
+
+
 	} else {
 		speechBubble.textContent = "I'm afraid I don't have any suggestions. Try inviting someone else or spending more money."
 	};	
-
 }
 
 function displayLoading(){
